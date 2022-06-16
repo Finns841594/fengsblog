@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -257,8 +257,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Define the Objective -&gt; Actions can be taken(levers) -&gt; Data can be used</p>
-<p>After the logic line above is cleared, then decide which model to be used.</p>
+<p>Define the Objective -&gt; Actions can be taken(levers) -&gt; Data can be used<br>
+After the logic line above is cleared, then decide which model to be used.</p>
 <p>"We use data not just to generate more data (in the form of predictions), but to produce actionable outcomes."</p>
 
 </div>
@@ -277,8 +277,73 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>1.Define the Objective: recommending a book based on the book that a user has purchased;
-2.</p>
+<p>1.Define the Objective: recommending a book based on the book that a user has purchased;<br>
+2.Actions: train a model which output the data which describes the revelance of each books in our libarary.<br>
+3.Data: names of Books each user has bought;</p>
+<p>Belows are from course:<br>
+The objective of a recommendation engine is to drive additional sales by surprising and delighting the customer with recommendations of items they would not have purchased without the recommendation.<br>
+The lever is the ranking of the recommendations.<br>
+New data must be collected to generate recommendations that will cause new sales.<br>
+Finally, you could build two models for purchase probabilities, conditional on seeing or not seeing a recommendation.</p>
+<p>What I got:<br>
+Go deeper into the motivation. Recommending a book here is to sell it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Create an image recognition model using data you curate, and deploy it on the web.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See my previous post:<br>
+<a href="https://finns841594.github.io/fengsblog/machine%20learning/2022/06/01/first-complete-practice.html">https://finns841594.github.io/fengsblog/machine%20learning/2022/06/01/first-complete-practice.html</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Deployed at here:<br>
+<a href="https://hub.gke2.mybinder.org/user/finns841594-dog_classifier-bu59zdrv/voila/render/Dog_Classifier.ipynb?token=saWa_1L4SZ2zaDWTk5Q1Dg">https://hub.gke2.mybinder.org/user/finns841594-dog_classifier-bu59zdrv/voila/render/Dog_Classifier.ipynb?token=saWa_1L4SZ2zaDWTk5Q1Dg</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>What is DataLoaders?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A class that stores the dataloads that you passed to it. Usually used in following way:<br>
+dls = DataBlock.dataloaders(path)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>What four things do we need to tell fastai to create DataLoaders?</li>
+</ol>
 
 </div>
 </div>
