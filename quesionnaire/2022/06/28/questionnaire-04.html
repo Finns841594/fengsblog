@@ -10,15 +10,15 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Quesionnaire of the lesson 4" />
 <meta property="og:description" content="Quesionnaire of the lesson 4" />
-<link rel="canonical" href="https://finns841594.github.io/fengsblog/markdown/2022/06/28/questionnaire-04.html" />
-<meta property="og:url" content="https://finns841594.github.io/fengsblog/markdown/2022/06/28/questionnaire-04.html" />
+<link rel="canonical" href="https://finns841594.github.io/fengsblog/quesionnaire/2022/06/28/questionnaire-04.html" />
+<meta property="og:url" content="https://finns841594.github.io/fengsblog/quesionnaire/2022/06/28/questionnaire-04.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-06-28T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Questionnaire 04" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-28T00:00:00-05:00","datePublished":"2022-06-28T00:00:00-05:00","description":"Quesionnaire of the lesson 4","headline":"Questionnaire 04","mainEntityOfPage":{"@type":"WebPage","@id":"https://finns841594.github.io/fengsblog/markdown/2022/06/28/questionnaire-04.html"},"url":"https://finns841594.github.io/fengsblog/markdown/2022/06/28/questionnaire-04.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-28T00:00:00-05:00","datePublished":"2022-06-28T00:00:00-05:00","description":"Quesionnaire of the lesson 4","headline":"Questionnaire 04","mainEntityOfPage":{"@type":"WebPage","@id":"https://finns841594.github.io/fengsblog/quesionnaire/2022/06/28/questionnaire-04.html"},"url":"https://finns841594.github.io/fengsblog/quesionnaire/2022/06/28/questionnaire-04.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fengsblog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://finns841594.github.io/fengsblog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fengsblog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -79,14 +79,14 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/fengsblog/categories/#markdown">markdown</a>
+        <a class="category-tags-link" href="/fengsblog/categories/#Quesionnaire">Quesionnaire</a>
         
       
       </p>
@@ -98,23 +98,39 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 </ul><ol>
   <li>
-    <p>How is a grayscale image represented on a computer? How about a color image?
+    <p>How is a grayscale image represented on a computer? How about a color image?<br>
 A grayscale image is stored as a matrix with same columns and rows as the resolution size. Each number in this matrix is ranged within 0~255, which represents the darkness of the pixel. A color image has three matrix which stored the information of the image by three channels: red, green, blue.</p>
   </li>
   <li>
-    <p>How are the files and folders in the ‘MNIST_SAMPLE’ dataset structured? Why?
+    <p>How are the files and folders in the ‘MNIST_SAMPLE’ dataset structured? Why?<br>
 The ‘MNIST’ datasets follows a common layout for machine learning datasets: seperate folders for the trainning set and the validation set(and/or test set).</p>
   </li>
   <li>
-    <p>Explain how the “pixel similarity” approach to classifying digits works.
+    <p>Explain how the “pixel similarity” approach to classifying digits works.<br>
 Based on the matrix we mentioned for the question one. We assume that the image of a number should have similar gray pixel distribution as other images of the same number. So we caculate the average number of the matrix which presents the images of a number as a ‘standard’, when we classifying a test image, we compare the piexel number of it to our ‘standard’, and give the inference result based on the similarity.</p>
   </li>
   <li>
-    <p>What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.</p>
+    <p>What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.<br>
+Its a very useful feature of Python. It is well explained as follow:
+ ‘List and dictionary comprehensions are a wonderful feature of Python. Many Python programmers use them every day, including the authors of this book—they are part of “idiomatic Python.” But programmers coming from other languages may have never seen them before. There are a lot of great tutorials just a web search away, so we won’t spend a long time discussing them now. Here is a quick explanation and example to get you started. A list comprehension looks like this: new_list = [f(o) for o in a_list if o&gt;0]. This will return every element of a_list that is greater than 0, after passing it to the function f. There are three parts here: the collection you are iterating over (a_list), an optional filter (if o&gt;0), and something to do to each element (f(o)). It’s not only shorter to write but way faster than the alternative ways of creating the same list with a loop.’</p>
+  </li>
+  <li>
+    <p>What is a “rank-3 tensor”?<br>
+A 3 dimensional tensor.</p>
+  </li>
+  <li>
+    <p>What is the difference between tensor rank and shape? How do you get the rank from the shape?<br>
+The rank shows how many dimension this tensor has. While the shape tells you the length of each dimension or axis. If a tensor has shape of 128<em>128</em>30, we say its a rank 3 tensor.</p>
+  </li>
+  <li>
+    <p>What are RMSE and L1 norm?<br>
+RMSE, root mean squared error, which is also called as L2 norm, take the mean of the square of differences and then take the square root: sqrt((value - mean)**2)
+L1 norm, mean absolute difference, take the mean of the absolute value of difference.</p>
   </li>
 </ol>
 
-  </div><a class="u-url" href="/fengsblog/markdown/2022/06/28/questionnaire-04.html" hidden></a>
+
+  </div><a class="u-url" href="/fengsblog/quesionnaire/2022/06/28/questionnaire-04.html" hidden></a>
 </article>
 
       </div>
