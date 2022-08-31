@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -137,8 +137,81 @@ https://scratch.mit.edu/projects/712728725</p>
  sizeof(double) returns 8;</p>
   </li>
   <li>
-</ol>
+    <p>It is easy to under stand the pointer by writing a program that swap two values: 
+ “
+ int main(void)
+ {
+ int a = get_int(“A: “);
+ int b = get_int(“B: “);
+ printf(“A is %i, B is %i\n”, a, b);</p>
 
+    <p>swap(&amp;a, &amp;b);
+ printf(“After swap\nA is %i, B is %i\n”, a, b);
+ }</p>
+
+    <p>void swap(int *x, int *y)
+ {
+ int z = *x; // Store the value of point x to the variable z
+ *x = *y; // write the value of point b to the point position x addressed
+ *y = z; // write the value of variable z to the point position y addressed
+ }
+ “
+ &amp;a will get the address of variable a, it is a pointer:
+ ‘int *z = &amp;a;’
+ if we print the z, we get a string which represents an address:
+ “printf(‘z: %p\n’, z);”
+ “0x1234567”
+ if we print the *z, we get the value at the address z:
+ “printf(‘z: %i\n’, *z);”
+ “50”</p>
+  </li>
+  <li>
+    <p>fopen(), fread(),fseek(),</p>
+  </li>
+  <li>
+    <p>about the point, check the code below to understand what &amp; and * being used.
+ int main(void)
+ {
+ int a = 101;
+ int *b = &amp;a;</p>
+
+    <p>printf(“1: %i\n”, a);
+ printf(“2: %p\n”, &amp;b);
+ printf(“3: %p\n”, b);
+ printf(“4: %i\n”, *b);
+ }</p>
+  </li>
+  <li>
+    <p>Most of the time bug happens with passing wrong type of data into a function, so it is super important to know that type of data you are passing!</p>
+  </li>
+  <li>
+    <p>”” is different from’’ in C; ““is for strings, for example “A string is written here”, while as ‘A’ is equavalent to A’s ascii code 65.</p>
+  </li>
+  <li>
+    <p>Several ways to build a dict quickly in Python:
+a = dict(one=1, two=2, three=3)
+b = {‘one’: 1, ‘two’: 2, ‘three’: 3}
+c = dict(zip([‘one’, ‘two’, ‘three’], [1, 2, 3])) # This one is so cool<br>
+d = dict([(‘two’, 2), (‘one’, 1), (‘three’, 3)])
+e = dict({‘three’: 3, ‘one’: 1, ‘two’: 2})
+a == b == c == d == e</p>
+  </li>
+  <li>
+    <p>For the easier programing, its better to comment on the variable that created, what type of data it is, and what structure it has. This makes things much easier!</p>
+  </li>
+  <li>
+    <p>In SQL, ORDER BY can have several statements. The First has the highest priority, for example:<br>
+SELECT movies.title, ratings.rating FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE movies.year = 2010 ORDER BY ratings.rating DESC, movies.title ASC;<br>
+The command above will order the result first by the rating, then if two movies have the same rating, the one with title name alphabetical priority will be the ordered forward the other one.</p>
+  </li>
+  <li>
+    <p>In html for using margin setting by passing different amount of parameters:
+margin: up right down left;
+margin: up right&amp;left down;
+margin: up&amp;down right&amp;left;
+margin: all-sides;</p>
+  </li>
+</ol>
 
   </div><a class="u-url" href="/fengsblog/notes/2022/07/19/CS50-notes.html" hidden></a>
 </article>
