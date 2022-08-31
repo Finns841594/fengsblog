@@ -136,51 +136,53 @@ https://scratch.mit.edu/projects/712728725</p>
  sizeof(float)  returns 4;
  sizeof(double) returns 8;</p>
   </li>
-  <li>
-    <p>It is easy to under stand the pointer by writing a program that swap two values: 
- “
- int main(void)
+  <li>It is easy to under stand the pointer by writing a program that swap two values:
+    <pre><code class="language-C"> int main(void)
  {
- int a = get_int(“A: “);
- int b = get_int(“B: “);
- printf(“A is %i, B is %i\n”, a, b);</p>
+ int a = get_int("A: ");
+ int b = get_int("B: ");
+ printf("A is %i, B is %i\n", a, b);
 
-    <p>swap(&amp;a, &amp;b);
- printf(“After swap\nA is %i, B is %i\n”, a, b);
- }</p>
+ swap(&amp;a, &amp;b);
+ printf("After swap\nA is %i, B is %i\n", a, b);
+ }
 
-    <p>void swap(int *x, int *y)
+ void swap(int *x, int *y)
  {
  int z = *x; // Store the value of point x to the variable z
  *x = *y; // write the value of point b to the point position x addressed
  *y = z; // write the value of variable z to the point position y addressed
  }
- “
+ "
  &amp;a will get the address of variable a, it is a pointer:
- ‘int *z = &amp;a;’
+ 'int *z = &amp;a;'
  if we print the z, we get a string which represents an address:
- “printf(‘z: %p\n’, z);”
- “0x1234567”
+ "printf('z: %p\n', z);"
+ "0x1234567"
  if we print the *z, we get the value at the address z:
- “printf(‘z: %i\n’, *z);”
- “50”</p>
+ "printf('z: %i\n', *z);"
+ "50"
+</code></pre>
   </li>
   <li>
     <p>fopen(), fread(),fseek(),</p>
   </li>
-  <li>
-    <p>about the point, check the code below to understand what &amp; and * being used.
- int main(void)
- {
- int a = 101;
- int *b = &amp;a;</p>
+  <li>about the point, check the code below to understand what &amp; and * being used.</li>
+</ol>
 
-    <p>printf(“1: %i\n”, a);
- printf(“2: %p\n”, &amp;b);
- printf(“3: %p\n”, b);
- printf(“4: %i\n”, *b);
- }</p>
-  </li>
+<pre><code class="language-C">    int main(void)
+    {
+    int a = 101;
+    int *b = &amp;a;
+
+    printf("1: %i\n", a);
+    printf("2: %p\n", &amp;b);
+    printf("3: %p\n", b);
+    printf("4: %i\n", *b);
+    }
+</code></pre>
+
+<ol>
   <li>
     <p>Most of the time bug happens with passing wrong type of data into a function, so it is super important to know that type of data you are passing!</p>
   </li>
@@ -188,13 +190,19 @@ https://scratch.mit.edu/projects/712728725</p>
     <p>”” is different from’’ in C; ““is for strings, for example “A string is written here”, while as ‘A’ is equavalent to A’s ascii code 65.</p>
   </li>
   <li>
-    <p>Several ways to build a dict quickly in Python:
-a = dict(one=1, two=2, three=3)
-b = {‘one’: 1, ‘two’: 2, ‘three’: 3}
-c = dict(zip([‘one’, ‘two’, ‘three’], [1, 2, 3])) # This one is so cool<br>
-d = dict([(‘two’, 2), (‘one’, 1), (‘three’, 3)])
-e = dict({‘three’: 3, ‘one’: 1, ‘two’: 2})
-a == b == c == d == e</p>
+    <p>Several ways to build a dict quickly in Python:</p>
+
+    <p>a = dict(one=1, two=2, three=3)</p>
+
+    <p>b = {‘one’: 1, ‘two’: 2, ‘three’: 3}</p>
+
+    <p>c = dict(zip([‘one’, ‘two’, ‘three’], [1, 2, 3])) # This one is so cool</p>
+
+    <p>d = dict([(‘two’, 2), (‘one’, 1), (‘three’, 3)])</p>
+
+    <p>e = dict({‘three’: 3, ‘one’: 1, ‘two’: 2})</p>
+
+    <p>a == b == c == d == e</p>
   </li>
   <li>
     <p>For the easier programing, its better to comment on the variable that created, what type of data it is, and what structure it has. This makes things much easier!</p>
