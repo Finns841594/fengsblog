@@ -96,41 +96,76 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#1-flask">1 Flask</a></li>
-<li class="toc-entry toc-h2"><a href="#2-build-the-register-function">2 Build the register function</a></li>
-<li class="toc-entry toc-h2"><a href="#3-connecting-apppy-with-html-files-in-flask">3 Connecting app.py with html files in Flask</a></li>
-<li class="toc-entry toc-h2"><a href="#4-jinja">4 Jinja</a></li>
+<li class="toc-entry toc-h2"><a href="#0-flask">0 Flask</a></li>
+<li class="toc-entry toc-h2"><a href="#1-collecting-datas-in-html-page">1 Collecting datas in html page</a></li>
+<li class="toc-entry toc-h2"><a href="#2-passing-data-from-html-page-to-apppy">2 Passing data from html page to app.py</a></li>
+<li class="toc-entry toc-h2"><a href="#3-processing-data-in-apppy">3 Processing data in app.py</a></li>
+<li class="toc-entry toc-h2"><a href="#4-reading-data-from-database-in-apppy">4 Reading data from database in app.py</a></li>
+<li class="toc-entry toc-h2"><a href="#5-passing-processed-data-from-apppy-to-html-page">5 Passing processed data from app.py to html page</a></li>
 </ul><p>I almost finished my CS50 course except for the final project!</p>
 
 <p>Before I start my final project, I decide to take a deep review about what I have learned from this course. It will be a take-out for me for my furture study as well.</p>
 
-<h2 id="1-flask">
-<a class="anchor" href="#1-flask" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Flask</h2>
+<h2 id="0-flask">
+<a class="anchor" href="#0-flask" aria-hidden="true"><span class="octicon octicon-link"></span></a>0 Flask</h2>
 
 <ul>
-  <li>By using flask, the skills for managing the database(sqlite), editing webpage(html, css, javascript), and Python programming are connected.</li>
+  <li>
+    <p>By using flask, the skills for managing the database(sqlite), editing webpage(html, css, javascript), and Python programming are connected.</p>
+  </li>
+  <li>
+    <p>Basically you collect and show data at the html pages, process data at app.py, store data at database.</p>
+  </li>
+  <li>
+    <p>This article will briefly explain how the following process works:</p>
+  </li>
 </ul>
 
-<h2 id="2-build-the-register-function">
-<a class="anchor" href="#2-build-the-register-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 Build the register function</h2>
+<ol>
+  <li>
+<strong>html page</strong> collecting data</li>
+  <li>Passing data to <strong>app.py</strong>
+</li>
+  <li>processing data in <strong>app.py</strong>
+</li>
+  <li>Storing or exracting data from <strong>SQLite</strong> database for the processing</li>
+  <li>Passing data to <strong>html page</strong>
+</li>
+</ol>
+
+<h2 id="1-collecting-datas-in-html-page">
+<a class="anchor" href="#1-collecting-datas-in-html-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Collecting datas in html page</h2>
+
+<ol>
+  <li>in HTML page, you can use &lt;form&gt; to collect</li>
+</ol>
+
+<h2 id="2-passing-data-from-html-page-to-apppy">
+<a class="anchor" href="#2-passing-data-from-html-page-to-apppy" aria-hidden="true"><span class="octicon octicon-link"></span></a>2 Passing data from html page to app.py</h2>
 <ol>
   <li>To check if a input exists, use request.form.get(“name_in_input_label”), if there is not a input, function returns false:
     <div class="language-python highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>     <span class="c1"># Input a username:
-</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"username"</span><span class="p">):</span>
-         <span class="k">return</span> <span class="n">apology</span><span class="p">(</span><span class="s">"must provide username"</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight"><code> <span class="c1"># Input a username:
+</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"username"</span><span class="p">):</span>
+     <span class="k">return</span> <span class="n">apology</span><span class="p">(</span><span class="s">"must provide username"</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li>To hash the password, use <code class="language-plaintext highlighter-rouge">generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)</code> from <code class="language-plaintext highlighter-rouge">werkzeug.security</code> library, check <a href="https://werkzeug.palletsprojects.com/en/1.0.x/utils/#werkzeug.security.generate_password_hash">here</a> for more information. And check the password with check_password_hash(hash_value, password).</li>
 </ol>
 
-<h2 id="3-connecting-apppy-with-html-files-in-flask">
-<a class="anchor" href="#3-connecting-apppy-with-html-files-in-flask" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 Connecting app.py with html files in Flask</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. in HTML page, you can use &lt;form&gt; to collect
-</code></pre></div></div>
+<h2 id="3-processing-data-in-apppy">
+<a class="anchor" href="#3-processing-data-in-apppy" aria-hidden="true"><span class="octicon octicon-link"></span></a>3 Processing data in app.py</h2>
 
-<h2 id="4-jinja">
-<a class="anchor" href="#4-jinja" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 Jinja</h2>
+<h2 id="4-reading-data-from-database-in-apppy">
+<a class="anchor" href="#4-reading-data-from-database-in-apppy" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 Reading data from database in app.py</h2>
+
+<h2 id="5-passing-processed-data-from-apppy-to-html-page">
+<a class="anchor" href="#5-passing-processed-data-from-apppy-to-html-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>5 Passing processed data from app.py to html page</h2>
+
+<ol>
+  <li>Jinja</li>
+</ol>
+
 <ul>
   <li>Jinja is invovled here, but I used just the simplest funciton. For most situations I just passed in a list with dicts and let it be interpret by the lines like following:
 ```html</li>
